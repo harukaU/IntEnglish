@@ -22,11 +22,16 @@ public class IntToEng {
         else if(n<20){
         	number=num1[n];
         } else{
-        	if()
-        		
+        	if(n%10==0){
+        		int x=n/10;
+        		number=num2[x-2];
         	}
-        	
+        	else{
+        		int y=n/10;
+        		int z=n%10;
+        		number=num2[y-2]+" "+num1[z];
+        	}
         }
-    	return "";
+    	return number;
     }
 }
