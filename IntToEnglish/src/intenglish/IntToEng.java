@@ -31,6 +31,30 @@ public class IntToEng {
         		int z=n%10;
         		number=num2[y-2]+" "+num1[z];
         	}
+        }else if(n<1000){
+        	if(n%100==0){
+        		int a=n/100;
+        		number=num1[a]+"hundred";
+        	}else{
+        	
+        		int c=n/100;
+        		int b=n%100;
+        		String number2;
+        		if(b<20){
+                	number2=num1[n];
+                } else{
+                	if(b%10==0){
+                		int x=b/10;
+                		number2=num2[x-2];
+                	}
+                	else{
+                		int y=b/10;
+                		int z=b%10;
+                		number2=num2[y-2]+" "+num1[z];
+                	}
+                }
+        		number=num1[c]+" hundred "+number2;
+        	}
         }else{
         	throw new NumberFormatException();
         }
