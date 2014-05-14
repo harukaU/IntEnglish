@@ -48,14 +48,17 @@ public class IntToEng {
                 		number2=num2[x-2];
                 	}
                 	else{
-                		int y=b/10;
-                		int z=b%10;
-                		number2=num2[y-2]+" "+num1[z];
+                		int d=b/10;
+                		int e=b%10;
+                		number2=num2[d-2]+" "+num1[e];
                 	}
                 }
         		number=num1[c]+" hundred "+number2;
         	}
-        }else{
+        }else if(n==1000){
+        	number="thousand";
+        }
+        else{
         	throw new NumberFormatException();
         }
     	return number;
