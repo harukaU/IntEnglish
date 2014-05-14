@@ -1,8 +1,5 @@
 package intenglish;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatcher.is;
-
 import org.junit.Test;
 
 
@@ -13,7 +10,18 @@ public class IntToEnglishTest {
 		IntToEng ie=new IntToEng();
 		String expected="one";
 		String actual=ie.translateEng(1);
-		assertThat(actual, is(expected));
+		assertThat(actual, expected);
+	}
+	private void assertThat(String actual, String expected) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Test
+	public void test2() {
+		IntToEng ie=new IntToEng();
+		String expected="twenty one";
+		String actual=ie.translateEng(21);
+		assertThat(actual, expected);
 	}
 
 

@@ -14,14 +14,14 @@ public class IntToEng {
     // 数値を英訳する変換するメソッド
     public String translateEng(int n) {
     	String[] num1={"zero", "one", "two", "three", "four", "five", "six", "seven","eight","nine","ten", "eleven","twelve","thirteen", "fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
-        String[] num2={"twenty", "thirty", "forty","fifty","sixty","seventy","eighty","ninety"};
+        String[] num2={"twenty", "thirty", "forty","fifty","sixty","seventy","eighty","ninety","hundred"};
         String number;
         if(n<0) {
         	throw new NumberFormatException();
         }
         else if(n<20){
         	number=num1[n];
-        } else{
+        } else if(n<=100){
         	if(n%10==0){
         		int x=n/10;
         		number=num2[x-2];
@@ -31,6 +31,8 @@ public class IntToEng {
         		int z=n%10;
         		number=num2[y-2]+" "+num1[z];
         	}
+        }else{
+        	throw new NumberFormatException();
         }
     	return number;
     }
